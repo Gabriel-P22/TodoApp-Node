@@ -6,4 +6,6 @@ const app = express()
 app.use(express.json())
 app.use(Router)
 
-app.listen(3000)
+app.listen(3000, () => {
+    console.log("The server is the listening on port 3000")
+})

@@ -1,8 +1,9 @@
 const { Router } = require('express') 
-const routes =  require('./initialTest')
+
+const initialRoute = require('./initialRoute')
 
 const router = Router()
 
-router.use("/a", routes);
+router.use("/", initialRoute);
 
 module.exports =  router

@@ -5,8 +5,8 @@ class TaskPersistence {
         this._taskList = new TaskList()
     }
 
-    save(task) {
-        this._taskList.add(task)
+    save(...task) {
+        this._taskList.add(...task)
     }
 
     find(description) {

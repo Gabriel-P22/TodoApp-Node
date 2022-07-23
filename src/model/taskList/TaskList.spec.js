@@ -78,8 +78,7 @@ describe("TaskList", () => {
     test("Can list all tasks", () => {
         const firstTask = new Task("Take the dog to the vet")
         const secondTask = new Task("Read one chapter of the clean architecture book")
-        taskList.add(firstTask)
-        taskList.add(secondTask)
+        taskList.add(firstTask, secondTask)
         const list = taskList.listAll()
         expect([firstTask, secondTask]).toStrictEqual(list)
     })

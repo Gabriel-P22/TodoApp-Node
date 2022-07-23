@@ -67,4 +67,13 @@ describe("TaskList", () => {
         expect(list[1].description).toBe("I need to the market")
         expect(list.length).toBe(2)
     })
+
+    test("Can list all tasks", () => {
+        const firstTask = new Task("Take the dog to the vet")
+        const secondTask = new Task("Read one chapter of the clean architecture book")
+        taskList.add(firstTask)
+        taskList.add(secondTask)
+        const list = taskList.listAll()
+        expect([firstTask, secondTask]).toStrictEqual(list)
+    })
 })

@@ -39,6 +39,10 @@ class TaskList {
     search(description) {
         return this._tasks.filter(t => t.description.includes(description)) 
     }
+
+    listAll() {
+        return this._tasks
+    }
 }
 
 module.exports = TaskList

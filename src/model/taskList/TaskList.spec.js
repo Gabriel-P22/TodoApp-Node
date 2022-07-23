@@ -27,6 +27,7 @@ describe("TaskList", () => {
             taskList.add(4)
         }
         expect(operation).toThrow(TypeError);
+        expect(operation).toThrow("Must be instance of Task or string");
     })
 
     test("Can get a task from the list when created with Task object", () => {
@@ -58,13 +59,21 @@ describe("TaskList", () => {
         expect(taskList.length).toBe(0)
     })
 
+    test("Can not remove anything that is not a Task object or string", () => {
+        const operation = () => {
+            taskList.remove(4)
+        }
+        expect(operation).toThrow(TypeError);
+        expect(operation).toThrow("Must be instance of Task or string");
+    })
+
     test("Can search a task by description", () => {
         taskList.add("I need to go rest")
-        taskList.add("I need to the market")
+        taskList.add("I need to go to the market")
         taskList.add("make potato")
         const list = taskList.search("I need to")
         expect(list[0].description).toBe("I need to go rest")
-        expect(list[1].description).toBe("I need to the market")
+        expect(list[1].description).toBe("I need to go to the market")
         expect(list.length).toBe(2)
     })
 

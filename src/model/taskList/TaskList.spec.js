@@ -68,9 +68,7 @@ describe("TaskList", () => {
     })
 
     test("Can search a task by description", () => {
-        taskList.add("I need to go rest")
-        taskList.add("I need to go to the market")
-        taskList.add("make potato")
+        taskList.add("I need to go rest", "I need to go to the market", new Task("make potato"))
         const list = taskList.search("I need to")
         expect(list[0].description).toBe("I need to go rest")
         expect(list[1].description).toBe("I need to go to the market")

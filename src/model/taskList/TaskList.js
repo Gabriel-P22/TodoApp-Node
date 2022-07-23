@@ -9,14 +9,16 @@ class TaskList {
         return this._tasks.length
     }
 
-    add(task) {
-        if (task instanceof Task) {
-            this._tasks.push(task)
-        } else if (typeof task === "string") {
-            this._tasks.push(new Task(task))
-        } else {
-            throw new TypeError("Must be instance of Task or string")
-        }
+    add(...tasks) {
+        tasks.forEach(task => {
+            if (task instanceof Task) {
+                this._tasks.push(task)
+            } else if (typeof task === "string") {
+                this._tasks.push(new Task(task))
+            } else {
+                throw new TypeError("Must be instance of Task or string")
+            }
+        })
     }
 
     get(description) {
